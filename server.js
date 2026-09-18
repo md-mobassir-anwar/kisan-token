@@ -65,4 +65,13 @@ app.get('/api/bookings/:id', (req, res) => {
         res.json(row); // Send back the matching farmer's info
     });
 });
+// Admin Route: View all user bookings
+app.get('/api/admin/bookings', (req, res) => {
+  db.all('SELECT * FROM bookings', [], (err, rows) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json(rows);
+  });
+});
 app.listen(5000, () => console.log('Backend server is RUNNING on port 5000!'));

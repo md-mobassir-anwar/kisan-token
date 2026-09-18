@@ -3,7 +3,7 @@
 async function loadStatus() {
     try {
         // Fetch all saved bookings from the database
-        const response = await fetch('http://localhost:5000/api/bookings');
+        const response = await fetch('https://kisan-token-backend-app.onrender.com/api/bookings');
         const bookings = await response.json();
 
         // Check if there are any bookings stored

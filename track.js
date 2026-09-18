@@ -14,7 +14,7 @@ async function trackToken() {
     }
 
     try {
-        const response = await fetch(`http://localhost:5000/api/bookings/${typedId}`);
+        const response = await fetch(`https://kisan-token-backend-app.onrender.com/api/bookings/${typedId}`);
         const data = await response.json();
 
         if (response.ok) {

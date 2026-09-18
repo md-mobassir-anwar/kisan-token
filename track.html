@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Track Token | Kisan Token</title>
+
+   <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+        🌾 <span>Kisan Token</span>
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="booking.html">
+            Book Token
+        </a>
+
+        <a href="track.html" class="active">
+            Track Token
+        </a>
+
+        <a href="status.html">
+            Status
+        </a>
+
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+
+<section class="page-header">
+
+    <span>LIVE QUEUE</span>
+
+    <h1>Track Your Token</h1>
+
+    <p>
+        Know your current queue position and procurement progress.
+    </p>
+
+</section>
+
+
+<section class="track-container">
+
+
+    <div class="track-search">
+
+        <h2>Enter Your Token Number</h2>
+
+        <p>
+            Enter the token number received after booking.
+        </p>
+
+
+        <div class="search-box">
+
+         <!-- File Location: kisan-token/track.html -->
+
+<!-- Replace your current input & button block (around line 88) with this: -->
+<input type="text" id="tokenInput" placeholder="Enter Token Number (e.g. #2)">
+<button type="button" id="trackBtn" class="track-btn" onclick="trackToken()">Track</button>
+
+        </div>
+
+
+        <button
+            onclick="loadDemoToken()"
+            class="demo-btn"
+        >
+            Try Demo Token
+        </button>
+
+    </div>
+
+
+    <!-- TRACK RESULT -->
+
+    <div id="trackResult" class="track-result hidden">
+
+
+        <div class="track-top">
+
+            <div>
+
+                <span class="label">
+                    TOKEN NUMBER
+                </span>
+
+                <h2 id="displayToken">
+                    KT-1234
+                </h2>
+
+            </div>
+
+
+            <span class="status-badge">
+                IN QUEUE
+            </span>
+
+        </div>
+
+
+        <div class="queue-info">
+
+
+            <div class="queue-card">
+
+                <span>Your Position</span>
+
+                <strong id="queuePosition">
+                    8
+                </strong>
+
+                <small>
+                    Farmers ahead
+                </small>
+
+            </div>
+
+
+            <div class="queue-card">
+
+                <span>Estimated Wait</span>
+
+                <strong id="waitTime">
+                    35
+                </strong>
+
+                <small>
+                    minutes
+                </small>
+
+            </div>
+
+
+            <div class="queue-card">
+
+                <span>Current Token</span>
+
+                <strong id="currentToken">
+                    KT-123
+                </strong>
+
+                <small>
+                    Being processed
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="queue-progress">
+
+            <div class="progress-header">
+
+                <span>
+                    Queue Progress
+                </span>
+
+                <strong id="progressPercent">
+                    68%
+                </strong>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    id="progressFill"
+                    style="width:68%">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="center-details">
+
+            <h3>📍 Procurement Center</h3>
+
+            <p id="trackCenter">
+                Bhopal Procurement Center
+            </p>
+
+            <div class="details-row">
+
+                <span>
+                    📅 <strong id="trackDate">
+                    28 Aug 2026
+                    </strong>
+                </span>
+
+                <span>
+                    🕐 <strong id="trackSlot">
+                    08:00 - 09:00
+                    </strong>
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="status.html"
+            class="btn primary-btn full-btn"
+        >
+            View Procurement Status →
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+<footer>
+
+    <div class="logo">
+        🌾 Kisan Token
+    </div>
+
+    <p>Smart Procurement • Smart Farmers</p>
+
+</footer>
+
+
+
+<script src="track.js"></script>
+
+</body>
+</html>

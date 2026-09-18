@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Procurement Status | Kisan Token</title>
+
+     <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+        🌾 <span>Kisan Token</span>
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="booking.html">
+            Book Token
+        </a>
+
+        <a href="track.html">
+            Track Token
+        </a>
+
+        <a href="status.html" class="active">
+            Status
+        </a>
+
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+
+<section class="page-header">
+
+    <span>PROCUREMENT STATUS</span>
+
+    <h1>Verify Your Procurement</h1>
+
+    <p>
+        Track every important stage from arrival to payment.
+    </p>
+
+</section>
+
+
+<section class="status-container">
+
+
+    <div class="status-header">
+
+        <div>
+
+            <span class="label">
+                TOKEN NUMBER
+            </span>
+
+            <h2 id="statusToken">
+                KT-1234
+            </h2>
+
+        </div>
+
+        <span class="status-badge completed">
+            PROCESSING
+        </span>
+
+    </div>
+
+
+    <!-- STATUS TIMELINE -->
+
+    <div class="timeline">
+
+
+        <div class="timeline-item completed">
+
+            <div class="timeline-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>Token Booked</h3>
+
+                <p>
+                    Your slot has been successfully booked.
+                </p>
+
+                <small>
+                    07:30 AM
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item completed">
+
+            <div class="timeline-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>Farmer Arrived</h3>
+
+                <p>
+                    Farmer arrival has been recorded.
+                </p>
+
+                <small>
+                    08:12 AM
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item active">
+
+            <div class="timeline-icon">
+                ⚙
+            </div>
+
+            <div>
+
+                <h3>Quality Verification</h3>
+
+                <p>
+                    Crop quality is currently being checked.
+                </p>
+
+                <span class="processing">
+                    IN PROGRESS
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-icon">
+                4
+            </div>
+
+            <div>
+
+                <h3>Weighing</h3>
+
+                <p>
+                    Final crop weight will be recorded.
+                </p>
+
+                <span class="pending">
+                    PENDING
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-icon">
+                5
+            </div>
+
+            <div>
+
+                <h3>Payment</h3>
+
+                <p>
+                    Payment will be processed after verification.
+                </p>
+
+                <span class="pending">
+                    PENDING
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- DETAILS -->
+
+    <div class="procurement-details">
+
+        <h2>Procurement Details</h2>
+
+
+        <div class="detail-grid">
+
+            <div>
+                <span>Farmer</span>
+                <strong id="statusFarmer">
+                    Demo Farmer
+                </strong>
+            </div>
+
+
+            <div>
+                <span>Crop</span>
+                <strong id="statusCrop">
+                    Paddy
+                </strong>
+            </div>
+
+
+            <div>
+                <span>Quantity</span>
+                <strong id="statusQuantity">
+                    25 Quintals
+                </strong>
+            </div>
+
+
+            <div>
+                <span>Center</span>
+                <strong>
+                    Bhopal Procurement Center
+                </strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="notice">
+
+        <strong>ℹ️ Important</strong>
+
+        <p>
+            Payment status will be updated after quality
+            verification and weighing are completed.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<footer>
+
+    <div class="logo">
+        🌾 Kisan Token
+    </div>
+
+    <p>
+        Smart Procurement • Smart Farmers
+    </p>
+
+</footer>
+
+
+<script src="js/main.js"></script>
+<script src="status.js"></script>
+
+</body>
+</html>

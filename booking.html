@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Book Token | Kisan Token</title>
+
+     <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+        🌾 <span>Kisan Token</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="booking.html" class="active">Book Token</a>
+        <a href="track.html">Track Token</a>
+        <a href="status.html">Status</a>
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+
+<section class="page-header">
+
+    <span>SMART BOOKING</span>
+
+    <h1>Book Your Procurement Token</h1>
+
+    <p>
+        Select your procurement center, date, slot and crop details.
+    </p>
+
+</section>
+
+
+<section class="booking-container">
+
+
+    <!-- PROGRESS -->
+
+    <div class="progress">
+
+        <div class="progress-step active">
+            <span>1</span>
+            Center
+        </div>
+
+        <div class="line"></div>
+
+        <div class="progress-step">
+            <span>2</span>
+            Schedule
+        </div>
+
+        <div class="line"></div>
+
+        <div class="progress-step">
+            <span>3</span>
+            Crop
+        </div>
+
+        <div class="line"></div>
+
+        <div class="progress-step">
+            <span>4</span>
+            Confirm
+        </div>
+
+    </div>
+
+
+    <!-- FORM -->
+
+    <form id="bookingForm">
+
+
+        <div class="form-section">
+
+            <h2>Farmer Information</h2>
+
+            <div class="form-grid">
+
+                <div class="input-group">
+
+                    <label>Farmer Name</label>
+
+                    <input
+                        type="text"
+                        id="farmerName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Mobile Number</label>
+
+                    <input
+                       type="text"
+                        id="mobileNumber"
+                         placeholder="Enter mobile number"
+                        maxlength="10"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-section">
+
+            <h2>Procurement Center</h2>
+
+            <div class="input-group">
+
+                <label>Select Center</label>
+
+                <select id="center" required>
+
+                    <option value="">
+                        Select procurement center
+                    </option>
+
+                    <option value="Bhopal Procurement Center">
+                        Bhopal Procurement Center
+                    </option>
+
+                    <option value="Sehore Procurement Center">
+                        Sehore Procurement Center
+                    </option>
+
+                    <option value="Vidisha Procurement Center">
+                        Vidisha Procurement Center
+                    </option>
+
+                    <option value="Raisen Procurement Center">
+                        Raisen Procurement Center
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-section">
+
+            <h2>Date & Time Slot</h2>
+
+            <div class="form-grid">
+
+                <div class="input-group">
+
+                    <label>Select Date</label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Select Slot</label>
+
+                    <select id="slot" required>
+
+                        <option value="">
+                            Select time slot
+                        </option>
+
+                        <option value="08:00 - 09:00">
+                            08:00 - 09:00
+                        </option>
+
+                        <option value="09:00 - 10:00">
+                            09:00 - 10:00
+                        </option>
+
+                        <option value="10:00 - 11:00">
+                            10:00 - 11:00
+                        </option>
+
+                        <option value="11:00 - 12:00">
+                            11:00 - 12:00
+                        </option>
+
+                        <option value="12:00 - 01:00">
+                            12:00 - 01:00
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-section">
+
+            <h2>Crop Information</h2>
+
+            <div class="form-grid">
+
+                <div class="input-group">
+
+                    <label>Select Crop</label>
+
+                    <select id="crop" required>
+
+                        <option value="">
+                            Select crop
+                        </option>
+
+                        <option value="Paddy">Paddy</option>
+
+                        <option value="Wheat">Wheat</option>
+
+                        <option value="Soybean">Soybean</option>
+
+                        <option value="Maize">Maize</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Quantity (Quintals)</label>
+
+                    <input
+                        type="number"
+                        id="quantity"
+                        min="1"
+                        placeholder="e.g. 25"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button type="submit" id="submitBtn" class="btn">
+
+            🎫 Generate My Token
+
+        </button>
+
+
+    </form>
+
+
+    <!-- TOKEN RESULT -->
+
+    <div id="tokenResult" class="token-result hidden">
+
+        <div class="success-icon">✓</div>
+
+        <h2>Token Booked Successfully!</h2>
+
+        <p>Your procurement token is:</p>
+
+        <div class="token-number" id="tokenNumber">
+            KT-0000
+        </div>
+
+        <div class="booking-summary">
+
+            <p>
+                <strong>Farmer:</strong>
+                <span id="resultFarmer"></span>
+            </p>
+
+            <p>
+                <strong>Center:</strong>
+                <span id="resultCenter"></span>
+            </p>
+
+            <p>
+                <strong>Date:</strong>
+                <span id="resultDate"></span>
+            </p>
+
+            <p>
+                <strong>Slot:</strong>
+                <span id="resultSlot"></span>
+            </p>
+
+            <p>
+                <strong>Crop:</strong>
+                <span id="resultCrop"></span>
+            </p>
+
+            <p>
+                <strong>Quantity:</strong>
+                <span id="resultQuantity"></span>
+                quintals
+            </p>
+
+        </div>
+
+
+        <a href="track.html" class="btn primary-btn">
+            Track My Token →
+        </a>
+
+    </div>
+
+
+</section>
+
+
+<footer>
+
+    <div class="logo">
+        🌾 Kisan Token
+    </div>
+
+    <p>Smart Procurement • Smart Farmers</p>
+
+</footer>
+<script src="main.js"></script>
+<script src="booking.js"></script>
+
+</body>
+</html>
